@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <h1>Olsker Cupcakes</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/order.html">Order</a></li>
+            <li><a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log ud</a></li>
+        </ul>
+        <form id="logout-form" action="/path-to-your-logout-handler" method="POST" style="display: none;">
+            <!-- håndtere log ud -->
+        </form>
+    </nav>
+</header>
+<main>
+    <h2>Welcome, [User Name]!</h2>
+    <section>
+        <h3>Your recent orders</h3>
+        <ul>
+            <li>Order #10234 - Date: 2024-01-10</li>
+            <li>Order #10235 - Date: 2024-02-11</li>
+            <li>Order #10236 - Date: 2024-03-12</li>
+            <!-- Juju du må gerne tilføje flere ordre her, hvis du mener der magler-->
+        </ul>
+    </section>
+</main>
+</body>
+</html>
