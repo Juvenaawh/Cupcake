@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/********** Generic for all pages ***********/
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    position: relative;
+    background-image: linear-gradient(to left, floralwhite, #eba4d5);
+}
+
+header, img {
+    position: absolute;
+    width: 150px;
+    mix-blend-mode: lighten;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.header-box {
+    display: flex;
+    font-size: 3.5rem;
+    font-weight: lighter;
+    text-shadow: 1px 1px 0px mediumorchid;
+    color: #e396d9;
+    padding-top: 20px;
+    margin-left: 68%;
+}
+
+#header-box, p {
+    margin-left: -17%;
+}
+
+.menu-bar {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    min-width: 99%;
+    height: 60px;
+    top: 70%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1)
+}
+
+.menu-bar .menu-style a {
+    color: #fff0ed;
+    text-decoration: none;
+    font-size: 18px;
+    text-shadow: 1px 1px 0px purple;
+}
+
+.menu-bar .menu-style .spacing {
+    margin-left: 70px;
+}
+
+.menu-bar #basket {
+    margin-left: 500px;
+    margin-top: 8px;
+    font-size: 30px;
+    text-shadow: 1px 1px 0px mediumorchid;
+}
+
+/***************** Front page *******************/
+
+.flex-index {
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    top: 40%;
+    left: 34%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.flex-index h1 {
+    color: #e396d9;
+    font-weight: lighter;
+    font-size: 50px;
+    text-shadow: 1px 1px 0px purple;
+}
+
+.flex-index h3 {
+    color: #fff0ed;
+    font-weight: normal;
+}
+
+.generic-form input {
+    color: #e396d9;
+    margin: 10px 10px 10px 0;
+}
+
+.generic-form input[type=text], .generic-form input[type=password] {
+    padding: 5px;
+    font-size: 1rem;
+    width: 48%;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .3);
+}
+
+.flex-index .btn {
+    width: 50%;
+    padding: 7px;
+    margin-top: 20px;
+    background: #fff0ed;
+    color: #e396d9;
+    text-shadow: 1px 1px 0px floralwhite;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.flex-index p {
+    margin-top: 0px;
+    color: purple;
+    margin-left: 4px;
+}
+
+/*********** Order-page ***********/
+
+.flex-order {
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    top: 65%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.flex-order .generic-form {
+    margin-top: 80px;
+    margin-left: -53%;
+}
+
+.generic-form p {
+    margin-left: 0%;
+    font-size: 20px;
+    color: #fff0ed;
+}
+
+.flex-order h2 {
+    color: #e396d9;
+    font-weight: bold;
+    font-size: 26px;
+    text-shadow: 1px 1px 0px purple;
+}
+
+.order-label {
+    font-size: 20px;
+    color: #fff0ed;
+}
+
+.order-style {
+    padding: 3px;
+    background: #fff0ed;
+    color: #e396d9;
+    border-radius: 5px;
+    outline: #fff0ed;
+}
+
+.generic-form #btn-order {
+    padding: 10px;
+    background: #fff0ed;
+    color: #e396d9;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.flex-container {
+    display: flex;
+    align-content: center;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: auto;
+    height: auto;
+}
+
+.flex-container .images {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 150px;
+}
+
+/*body {
+    background-image: url("public/images/background.png");
+    min-height: 100%;
+    min-width: 100%;
+}*/
+/*.front-page {
+    display: flex;
+    font-family: "Poppins", sans-serif;
+}
+
+/*header {
+    background-color: #fee;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #8cdfb8;
+    border: none;
+    cursor: pointer;
+}*/

@@ -1,16 +1,16 @@
-package app.dao;
+package app.controllers;
 
-import app.models.Topping;
+import app.entities.Topping;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ToppingDAO {
+public class ToppingController {
 
     private Connection connection;
 
-    public ToppingDAO(Connection connection) {
+    public ToppingController(Connection connection) {
         this.connection = connection;
     }
 

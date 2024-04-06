@@ -10,10 +10,10 @@ import io.javalin.http.Context;
 public class UserController {
 
     public static void addRoutes (Javalin app, ConnectionPool connectionPool){
-        /*app.post("login", ctx -> login(ctx, connectionPool));*/
+        app.post("login", ctx -> login(ctx, connectionPool));
         app.get("logout", ctx -> logout(ctx));
-        app.get("createuser", ctx -> ctx.render("createuser.html"));
-        app.post("createuser", ctx -> createUser(ctx, connectionPool));
+        app.get("register", ctx -> ctx.render("register.html"));
+        app.post("register", ctx -> createUser(ctx, connectionPool));
     }
 
 
@@ -22,21 +22,22 @@ public class UserController {
         String username = ctx.formParam("username");
         String password1 = ctx.formParam("password1");
         String password2 = ctx.formParam("password2");
+        String email = ctx.formParam("email");
 
         if(password1.equals(password2)){
             try {
-                UserMapper.createuser(username, password1, connectionPool);
+                UserMapper.createUser(username, password1, email, connectionPool);
                 ctx.attribute("message", "Du er hermed oprettet med brugernavn: " + username +
                         ". Nu kan du logge på.");
                 ctx.render("index.html");
 
             } catch (DatabaseException e) {
                 ctx.attribute("message", "Det brugernavn findes allerede. Prøv igen, eller log ind.");
-                ctx.render("createuser.html");
+                ctx.render("register.html");
             }
         } else {
             ctx.attribute("message", "Dine to passwords er ikke ens! Prøv igen.");
-            ctx.render("createuser.html");
+            ctx.render("register.html");
         }
     }
 
@@ -45,7 +46,7 @@ public class UserController {
         ctx.redirect("/");
     }
 
-    /*public static void login (Context ctx, ConnectionPool connectionPool){
+    public static void login (Context ctx, ConnectionPool connectionPool){
         // Hent form parametre
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
@@ -55,16 +56,14 @@ public class UserController {
             User user = UserMapper.login(username, password, connectionPool);
             ctx.sessionAttribute("currentUser", user);
 
-            // Hvis ja, Send videre til task siden
-            List<Task> taskList = TaskMapper.getAllTasksPerUser(user.getUserId(), connectionPool);
-            ctx.attribute("taskList", taskList);
-            ctx.render("task.html");
+            // Hvis ja, Send videre til order siden
+            ctx.render("order.html");
 
         } catch (DatabaseException e) {
             // Hvis nej, send tilbage til login side med fejl besked
             ctx.attribute("message", e.getMessage());
             ctx.render("index.html");
         }
-    }*/
+    }
 
 }

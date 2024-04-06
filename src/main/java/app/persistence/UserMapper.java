@@ -2,7 +2,6 @@ package app.persistence;
 
 import app.entities.User;
 import app.exceptions.DatabaseException;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,8 +25,9 @@ public class UserMapper {
             if (rs.next())
             {
                 int id = rs.getInt("user_id");
+                String email = rs.getString("email");
                 String role = rs.getString("role");
-                return new User(id, userName, password, role);
+                return new User(id, userName, password, email, role);
             } else
             {
                 throw new DatabaseException("Fejl i login. Prøv igen");
@@ -39,9 +39,9 @@ public class UserMapper {
         }
     }
 
-    public static void createuser(String userName, String password, ConnectionPool connectionPool) throws DatabaseException
+    public static void createUser(String userName, String password, String email, ConnectionPool connectionPool) throws DatabaseException
     {
-        String sql = "insert into users (user_name, password) values (?,?)";
+        String sql = "insert into users (user_name, password, email) values (?,?,?)";
 
         try (
                 Connection connection = connectionPool.getConnection();
@@ -50,6 +50,7 @@ public class UserMapper {
         {
             ps.setString(1, userName);
             ps.setString(2, password);
+            ps.setString(3, email);
 
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected != 1)

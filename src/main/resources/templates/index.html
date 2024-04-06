@@ -3,34 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Olsker Cupcakes</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 <body>
 
-<h1>Welcome to Olsker Cupcakes!</h1>
-<!-- Juju, yderligere indhold skal være her såsom billede, logo -->
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Olsker Cupcakes</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
 <header>
-    <h1>Olsker Cupcakes</h1>
-    <nav>
-        <ul>
-            <li><a href="/order.html">Bestil</a></li>
-            <li><a href="/register.html">Registrer</a></li>
-            <li><a href="/login.html">Log ind</a></li>
-        </ul>
-    </nav>
+        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
 </header>
-<main>
-    <p>Welcome to Olsker Cupcakes! What can we do for you today?.</p>
-    <button onclick="window.location='/order.html'">Order now!</button>
-</main>
+
+<div class="header-box">
+    <p1>OLSKER</p1>
+    <p>CUPCAKES</p>
+</div>
+
+<!--div class="menu-bar">
+    <menu>
+        <div class="menu-style">
+            <span><a href="index.html" th:href="@{/index}">Home</a></span>
+        </div>
+    </menu>
+</div>-->
+
+<div class="flex-index">
+    <h1>Welcome!</h1>
+    <h3>Please login in to order</h3>
+    <form class="generic-form" method="post">
+        <input type="text" name="username" placeholder="Enter your username" required>
+        <input type="password" name="password" placeholder="Enter your password" required>
+
+        <button class="btn" type="submit" formaction="/login">Delicious cakes only one click away!</button>
+        <div><p class="error" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></p></div>
+    </form>
+
+    <div>
+        <p>Haven't got a profile yet? <a href="register.html" th:href="@{/register}">Sign up</a> </p>
+    </div>
+
+    <div th:if="${session.currentUser != null}">
+        <span th:text="${session.currentUser.username}"></span> |
+        <a href="index.html" th:href="@{/logout}">Logout</a>
+    </div>
+    <!--div id="bg-image">
+        <img src="../public/images/background.png" th:src="@{/images/background.png}">
+    </div>-->
+
+</div>
+
+
+            <!--li><a href="/order.html">Bestil</a></li>
+            <li><a href="/register.html">Registrer</a></li>
+            <li><a href="/login.html">Log ind</a></li>-->
+
 </body>
 </html>

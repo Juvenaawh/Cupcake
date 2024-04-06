@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Register account</title>
-    <link rel="stylesheet" href="/style.css">
-    <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -48,12 +50,33 @@
         button:hover {
             background-color: #218838;
         }
-    </style>
+    </style>-->
 </head>
 <body>
+
 <header>
-    <h1>Olsker Cupcakes</h1>
+        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
 </header>
+
+<div class="header-box">
+    <p1>OLSKER</p1>
+    <p>CUPCAKES</p>
+</div>
+
+<div class="menu-bar">
+    <menu>
+        <div class="menu-style">
+            <span><a href="order.html" th:href="@{/order}">Home</a></span>
+            <span class="spacing"><a href="profile.html" th:href="@{/profile}">Profile</a></span>
+            <span class="spacing"><a href="profile.html" th:href="@{/profile}">Orders</a></span>
+            <span class="spacing"><a href="contact.html" th:href="@{/contact}">Contact</a></span>
+            <span class="spacing"><a href="contact.html" th:href="@{/contact}">About</a></span>
+        </div>
+    </menu>
+    <span id="basket"><a href="order.html" th:href="@{/order}"><i class='bx bx-basket' style='color:#e396d9' ></i></a></span>
+    <h1><span th:text="${session.currentUser.email}"></span></h1>
+</div>
+
 <main>
     <h2>Create account</h2>
     <form id="registerForm" action="/path-to-your-registration-handler" method="POST">
