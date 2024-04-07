@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>My Profile</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
-<header>
-    <h1>Olsker Cupcakes</h1>
+
+<!--header>
+    <a href="index.html" th:href="@{/}">
+        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
+    </a>
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -15,10 +21,34 @@
             <li><a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log ud</a></li>
         </ul>
         <form id="logout-form" action="/path-to-your-logout-handler" method="POST" style="display: none;">
-            <!-- håndtere log ud -->
+            < håndtere log ud
         </form>
     </nav>
+</header>-->
+
+<header>
+        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
 </header>
+
+<div class="header-box">
+    <p1>OLSKER</p1>
+    <p>CUPCAKES</p>
+</div>
+
+<div class="menu-bar">
+    <menu>
+        <div class="menu-style">
+            <span><a href="order.html" th:href="@{/order}">Home</a></span>
+            <span class="spacing"><a href="profile.html" th:href="@{/profile}">Profile</a></span>
+            <span class="spacing"><a href="profile.html" th:href="@{/profile}">Orders</a></span>
+            <span class="spacing"><a href="contact.html" th:href="@{/contact}">Contact</a></span>
+            <span class="spacing"><a href="about.html" th:href="@{/about}">About</a></span>
+        </div>
+    </menu>
+    <span id="basket"><a href="order.html" th:href="@{/order}"><i class='bx bx-basket' style='color:#D99099' ></i></a></span>
+    <h1><span th:text="${session.currentUser.email}"></span></h1>
+</div>
+
 <main>
     <h2>Welcome, [User Name]!</h2>
     <section>

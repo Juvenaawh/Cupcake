@@ -27,35 +27,41 @@
     </menu>
 </div>-->
 
-<div class="flex-index">
+<div id="bg-image">
+    <img alt="background-image" src="../public/images/background.png" th:src="@{/images/background.png}">
+</div>
+
+<div class="flex-login">
     <h1>Welcome!</h1>
-    <h3>Please login in to order</h3>
-    <form class="generic-form" method="post">
-        <input type="text" name="username" placeholder="Enter your username" required>
-        <input type="password" name="password" placeholder="Enter your password" required>
+    <div id="register-link">
+        <p>No profile yet? <br>
+            <a href="register.html" th:href="@{/register}">Sign up</a>
+        </p>
+    </div>
+    <form id="sign-in" method="post">
+        <h3>Please login in to order</h3>
+        <div class="input-box">
+            <input type="text" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="remember-forgot">
+            <label>
+                <input type="checkbox">Remember me</label>
+            <a href="#">Forgot password ?</a>
+        </div>
 
         <button class="btn" type="submit" formaction="/login">Delicious cakes only one click away!</button>
         <div><p class="error" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></p></div>
+
+        <div id="logout" th:if="${session.currentUser != null}">
+            <span th:text="${session.currentUser.username}"></span>
+            <a href="index.html" th:href="@{/logout}">Logout</a>
+        </div>
     </form>
-
-    <div>
-        <p>Haven't got a profile yet? <a href="register.html" th:href="@{/register}">Sign up</a> </p>
-    </div>
-
-    <div th:if="${session.currentUser != null}">
-        <span th:text="${session.currentUser.username}"></span> |
-        <a href="index.html" th:href="@{/logout}">Logout</a>
-    </div>
-    <!--div id="bg-image">
-        <img src="../public/images/background.png" th:src="@{/images/background.png}">
-    </div>-->
-
 </div>
-
-
-            <!--li><a href="/order.html">Bestil</a></li>
-            <li><a href="/register.html">Registrer</a></li>
-            <li><a href="/login.html">Log ind</a></li>-->
 
 </body>
 </html>

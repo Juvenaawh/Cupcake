@@ -2,34 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order Cupcake</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
+
 <header>
-    <h1>Olsker Cupcakes</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/register.html">Registrer</a></li>
-            <li><a href="/login.html">Log in</a></li>
-        </ul>
-    </nav>
+        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
 </header>
-<main>
-    <h2>Create your Cupcake</h2>
-    <form id="orderForm">
-        <label for="bottom">Choose bottom:</label>
-        <select id="bottom" name="bottom">
+
+<div class="header-box">
+    <p1>OLSKER</p1>
+    <p>CUPCAKES</p>
+</div>
+
+<div class="menu-bar">
+    <menu>
+        <div class="menu-style">
+        <span><a href="order.html" th:href="@{/order}">Home</a></span>
+        <span class="spacing"><a href="profile.html" th:href="@{/profile}">Profile</a></span>
+        <span class="spacing"><a href="profile.html" th:href="@{/profile}">Orders</a></span>
+        <span class="spacing"><a href="contact.html" th:href="@{/contact}">Contact</a></span>
+        <span class="spacing"><a href="about.html" th:href="@{/about}">About</a></span>
+        <span class="spacing"><h1><span id="current-user" th:text="${session.currentUser.email}"></span>, your now logged in!</h1></span>
+        </div>
+    </menu>
+    <span id="basket">
+        <a href="cart.html" th:href="@{/cart}"><i class='bx bx-basket' style='color:#D99099' ></i></a>
+    </span>
+</div>
+
+<div class="flex-order">
+    <h2>Customize your combination</h2>
+    <form class="generic-form">
+        <label class="order-label" for="bottom">Choose bottom :</label>
+        <select class="order-style" id="bottom" name="bottom">
             <option value="Chocolate">Chocolate - 5.00 kr</option>
             <option value="Vanilla">Vanilla - 5.00 kr</option>
             <option value="Nutmeg">Nutmeg - 5.00 kr</option>
             <option value="Pistacio">Pistacio - 6.00 kr</option>
             <option value="Almond">Almond - 7.00 kr</option>
-        </select>
+        </select><br><br>
 
-        <label for="topping">Choose topping:</label>
-        <select id="topping" name="topping">
+        <label class="order-label" for="topping">Choose topping :</label>
+        <select class="order-style" id="topping" name="topping">
             <option value="Chocolate">Chocolate - 5.00 kr</option>
             <option value="Blueberry">Blueberry - 5.00 kr</option>
             <option value="Rasberry">Rasberry - 5.00 kr</option>
@@ -39,12 +58,45 @@
             <option value="Orange">Orange - 8.00 kr</option>
             <option value="Lemon">Lemon - 8.00 kr</option>
             <option value="Blue cheese">Blue cheese - 9.00 kr</option>
+        </select><br><br>
+
+        <label class="order-label" for="quantity">Choose quantity :</label>
+        <select class="order-style" id="quantity" name="quantity">
+            <option value="One">1</option>
+            <option value="Two">2</option>
+            <option value="Four">4</option>
+            <option value="Eight">8</option>
+            <option value="Twelve">12</option>
         </select>
 
         <p>Total price: <span id="price">10.00 kr</span></p>
-        <button type="submit">Order Now</button>
+        <button id="btn-order" type="submit">Order now</button>
     </form>
-</main>
+</div>
+
+<div class="img-container">
+    <div class="img-item">
+        <img alt="Pistachio" src="../public/images/pistachio.png" th:src="@{/images/pistachio.png}">
+        <figcaption class="img-text">Pistachio bottom</figcaption>
+    </div>
+    <div class="img-item">
+        <img alt="Chocolate" src="../public/images/chocolate.png" th:src="@{/images/chocolate.png}">
+        <figcaption class="img-text">Chocolate bottom</figcaption>
+    </div>
+    <div class="img-item">
+        <img alt="Nutmeg" src="../public/images/nutmeg.png" th:src="@{/images/nutmeg.png}">
+        <figcaption class="img-text">Nutmeg bottom</figcaption>
+    </div>
+    <div class="img-item">
+        <img alt="Almond" src="../public/images/almond.png" th:src="@{/images/almond.png}">
+        <figcaption class="img-text">Almond bottom</figcaption>
+    </div>
+    <div class="img-item">
+        <img alt="Vanilla" src="../public/images/vanilla.png" th:src="@{/images/vanilla.png}">
+        <figcaption class="img-text">Vanilla bottom</figcaption>
+    </div>
+</div>
+
 <script>
     const bottomPrices = { 'Chocolate': 5.00, 'Vanilla': 5.00, 'Nutmeg': 5.00, 'Pistacio': 6.00, 'Almond': 7.00 };
     const toppingPrices = { 'Chocolate': 5.00, 'Blueberry': 5.00, 'Rasberry': 5.00, 'Crispy': 6.00, 'Strawberry': 6.00 };
