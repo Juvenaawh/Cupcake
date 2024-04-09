@@ -24,20 +24,20 @@
         <div class="menu-style">
         <span><a href="order.html" th:href="@{/order}">Home</a></span>
         <span class="spacing"><a href="profile.html" th:href="@{/profile}">Profile</a></span>
-        <span class="spacing"><a href="profile.html" th:href="@{/profile}">Orders</a></span>
         <span class="spacing"><a href="contact.html" th:href="@{/contact}">Contact</a></span>
-        <span class="spacing"><a href="about.html" th:href="@{/about}">About</a></span>
+        <span class="spacing" th:if="${session.currentUser != null}"><a href="index.html" th:href="@{/logout}">Logout</a></span>
         <span><h1>You're logged in as <span id="current-user" th:text="${session.currentUser.email}"></span></h1></span>
         </div>
     </menu>
-    <span id="basket">
+    <div id="basket">
         <a href="cart.html" th:href="@{/cart}"><i class='bx bx-basket' style='color:#D99099' ></i></a>
-    </span>
+        <span style='color: #fff0ed'>0</span>
+    </div>
 </div>
 
 <div class="flex-order">
     <h2>Customize your combination</h2>
-    <form class="generic-form">
+    <form class="generic-form" method="post">
         <label class="order-label" for="bottom">Choose bottom :</label>
         <select class="order-style" id="bottom" name="bottom">
             <option value="Chocolate">Chocolate - 5.00 kr</option>
@@ -70,7 +70,7 @@
         </select>
 
         <p>Total price: <span id="price">10.00 kr</span></p>
-        <button id="btn-order" type="submit">Order now</button>
+        <button id="btn-order" type="submit" formaction="additem">Add To Basket</button>
     </form>
 </div>
 

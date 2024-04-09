@@ -1,6 +1,6 @@
 import app.config.ThymeleafConfig;
 import app.persistence.ConnectionPool;
-import app.controllers.UserController;
+import app.controllers.*;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
 
@@ -27,5 +27,6 @@ public class Main {
         app.get("/", ctx ->  ctx.render("index.html"));
 
         UserController.addRoutes(app, connectionPool);
+        /*OrderController.addRoutes(app, connectionPool);*/
     }
 }
