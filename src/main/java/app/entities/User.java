@@ -46,4 +46,8 @@ public class User {
                 ", role='" + role + '\'' +
                 '}';
     }
+
+    public int getId(int Id) {
+        return Id;
+    }
 }
