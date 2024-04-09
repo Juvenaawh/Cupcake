@@ -16,9 +16,10 @@ public class UserController {
         app.post("register", ctx -> createUser(ctx, connectionPool));
     }
 
-
     private static void createUser(Context ctx, ConnectionPool connectionPool){
         // Hent form parametre
+        String firstname = ctx.formParam("firstname");
+        String lastname = ctx.formParam("lastname");
         String username = ctx.formParam("username");
         String password1 = ctx.formParam("password1");
         String password2 = ctx.formParam("password2");
@@ -26,7 +27,7 @@ public class UserController {
 
         if(password1.equals(password2)){
             try {
-                UserMapper.createUser(username, password1, email, connectionPool);
+                UserMapper.createUser(firstname, lastname, username, password1, email, connectionPool);
                 ctx.attribute("message", "Du er hermed oprettet med brugernavn: " + username +
                         ". Nu kan du logge på.");
                 ctx.render("index.html");

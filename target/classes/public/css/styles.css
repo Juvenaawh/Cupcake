@@ -68,12 +68,32 @@ header, img {
     text-shadow: 1px 1px 0px saddlebrown;
     font-weight: lighter;
 }
+.menu-style span h1 {
+    margin-top: -28px;
+    margin-left: 700px;
+}
 
 .menu-bar #basket {
-    margin-left: 550px;
+    position: relative;
+    margin-left: 270px;
     margin-top: 8px;
     font-size: 30px;
     text-shadow: 1px 1px 0px saddlebrown;
+}
+
+#basket span {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    background-color: #D99099;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    right: 0px;
 }
 
 /***************** Front page *******************/
@@ -141,16 +161,17 @@ header, img {
     border-radius: 4px;
 }
 
-.input-box input[type=text], .input-box input[type=password] {
+.input-box input[type=text], input[type=password] {
     padding: 5px;
     font-size: 1rem;
     width: 100%;
     background: transparent;
     outline: none;
     border: 1px solid rgba(255, 255, 255, .3);
+    color: #fff0ed;
 }
 
-::placeholder {
+.input-box ::placeholder {
     color: #fff0ed;
 }
 
@@ -314,17 +335,211 @@ header, img {
     color: #D99099;
 }
 
-/************ About ***********/
+/*********** Cart ************/
 
-#msg h1 {
-    display: flex;
-    transform: translate(-340%, 150%);
-    color: #fff0ed;
-    font-weight: lighter;
-    font-size: 50px;
-    text-shadow: 1px 1px 0px saddlebrown;
-
+.cart-container {
+    width: 400px;
+    background-color: transparent;
+    position: fixed;
+    inset: 37% auto 40px 0;
+    margin-left: 50px;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
 }
+
+.cart-container h1{
+    color: #D99099;
+    text-shadow: 1px 1px 0px saddlebrown;
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.cart-container .cart-btn {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    margin: 20px;
+}
+
+.cart-container .cart-btn button{
+    background-color: #fff0ed;
+    border: none;
+    font-weight: 500;
+    color: #D99099;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-container .cart-btn a {
+    color: #D99099;
+    text-decoration: none;
+}
+
+.cart-container .list-cart .item {
+    padding: 10px 0 0 10px;
+    display: grid;
+    grid-template-columns: 70px 150px 70px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    color: #fff0ed;
+}
+
+.list-cart .qauntity span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff0ed;
+    color: saddlebrown;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.list-cart .qauntity span:nth-child(2){
+    background-color: transparent;
+    color: #fff0ed;
+}
+
+.list-cart .item:nth-child(even){
+    background-color: #C57A86;
+}
+
+.list-cart {
+    overflow: auto;
+}
+
+/************ Register *********/
+
+.create-account {
+    width: 600px;
+    background-color: transparent;
+    position: fixed;
+    inset: 35% auto 40px 20px;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+
+.create-account h1 {
+    color: #D99099;
+    text-shadow: 1px 1px 0px saddlebrown;
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.create-account #register-form input[type=text], input[type=email]{
+    margin: 10px 10px 10px 20px;
+    padding: 7px 0 7px 5px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: #fff0ed;
+    color: #D99099;
+    outline: none;
+    border: 1px solid saddlebrown;
+}
+
+.create-account #register-form .register-password {
+    margin: 10px 10px 10px 20px;
+    padding: 7px 0 7px 5px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: #fff0ed;
+    color: #D99099;
+    outline: none;
+    border: 1px solid saddlebrown;
+    font-size: 13px;
+}
+
+.create-account #register-form ::placeholder {
+    color: #D99099;
+}
+
+.create-account #register-form button {
+    margin: 20px 10px 10px 20px;
+    padding: 7px 0 7px 0;
+    width: 150px;
+    border-radius: 4px;
+    background-color: #fff0ed;
+    color: #D99099;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/************ Check out ***********/
+
+.check-out {
+    width: 600px;
+    background-color: transparent;
+    position: fixed;
+    inset: 35% auto 40px 20px;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+
+.check-out h1 {
+    color: #D99099;
+    text-shadow: 1px 1px 0px saddlebrown;
+    padding: 10px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.check-out h4 {
+    padding-left: 10px;
+    color: #fff0ed;
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+label #fname{
+    display: block;
+    padding: 10px;
+    color: #fff0ed;
+    padding-left: 10px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.icon-container {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.check-out #payment-form input[type=text]{
+    margin: 10px 10px 10px 10px;
+    padding: 7px 0 7px 5px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: #fff0ed;
+    color: #D99099;
+    outline: none;
+    border: 1px solid saddlebrown;
+}
+
+.check-out #payment-form ::placeholder {
+    color: #D99099;
+}
+
+.check-out #payment-form button {
+    margin: 20px 10px 10px 10px;
+    padding: 7px 0 7px 0;
+    width: 150px;
+    border-radius: 4px;
+    background-color: #fff0ed;
+    color: #D99099;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    font-weight: bold;
+}
+
 
 /*body {
     background-image: url("public/images/background.png");
