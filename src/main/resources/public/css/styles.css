@@ -397,9 +397,21 @@ header, img {
     font-size: 14px;
 }
 
-.list-cart .qauntity span:nth-child(2){
+.list-cart .qauntity tr:nth-child(2){
     background-color: transparent;
     color: #fff0ed;
+}
+
+.list-cart tr {
+    border: 1px solid silver;
+}
+
+.list-cart td {
+    text-align: center;
+}
+
+.list-cart {
+    border-collapse: collapse;
 }
 
 .list-cart .item:nth-child(even){

@@ -5,13 +5,12 @@
     <title>Order</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet"/>
 </head>
 <body>
 
 <header>
-        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
+        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}"/>
 </header>
 
 <div class="header-box">
@@ -40,33 +39,33 @@
     <form class="generic-form" method="post">
         <label class="order-label" for="bottom">Choose bottom :</label>
         <select class="order-style" id="bottom" name="bottom">
-            <option value="Chocolate">Chocolate - 5.00 kr</option>
-            <option value="Vanilla">Vanilla - 5.00 kr</option>
-            <option value="Nutmeg">Nutmeg - 5.00 kr</option>
-            <option value="Pistacio">Pistacio - 6.00 kr</option>
-            <option value="Almond">Almond - 7.00 kr</option>
+            <option value="1">Chocolate - 5.00 kr</option>
+            <option value="2">Vanilla - 5.00 kr</option>
+            <option value="3">Nutmeg - 5.00 kr</option>
+            <option value="4">Pistacio - 6.00 kr</option>
+            <option value="5">Almond - 7.00 kr</option>
         </select><br><br>
 
         <label class="order-label" for="topping">Choose topping :</label>
         <select class="order-style" id="topping" name="topping">
-            <option value="Chocolate">Chocolate - 5.00 kr</option>
-            <option value="Blueberry">Blueberry - 5.00 kr</option>
-            <option value="Rasberry">Rasberry - 5.00 kr</option>
-            <option value="Crispy">Crispy - 6.00 kr</option>
-            <option value="Strawberry">Strawberry - 6.00 kr</option>
-            <option value="Rum/Raisin">Rum/Raisin - 7.00 kr</option>
-            <option value="Orange">Orange - 8.00 kr</option>
-            <option value="Lemon">Lemon - 8.00 kr</option>
-            <option value="Blue cheese">Blue cheese - 9.00 kr</option>
+            <option value="1">Chocolate - 5.00 kr</option>
+            <option value="2">Blueberry - 5.00 kr</option>
+            <option value="3">Rasberry - 5.00 kr</option>
+            <option value="4">Crispy - 6.00 kr</option>
+            <option value="5">Strawberry - 6.00 kr</option>
+            <option value="6/Raisin">Rum/Raisin - 7.00 kr</option>
+            <option value="7">Orange - 8.00 kr</option>
+            <option value="8">Lemon - 8.00 kr</option>
+            <option value="9">Blue cheese - 9.00 kr</option>
         </select><br><br>
 
         <label class="order-label" for="quantity">Choose quantity :</label>
         <select class="order-style" id="quantity" name="quantity">
-            <option value="One">1</option>
-            <option value="Two">2</option>
-            <option value="Four">4</option>
-            <option value="Eight">8</option>
-            <option value="Twelve">12</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">4</option>
+            <option value="4">8</option>
+            <option value="5">12</option>
         </select>
 
         <p>Total price: <span id="price">10.00 kr</span></p>

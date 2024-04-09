@@ -3,9 +3,9 @@ package app.entities;
 
 public class Topping {
     private String name;
-    private double price;
+    private int price;
 
-    public Topping(String name, double price) {
+    public Topping(String name, int price) {
         this.name = name;
         this.price = price;
     }
@@ -19,11 +19,8 @@ public class Topping {
         this.name = name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
 }
