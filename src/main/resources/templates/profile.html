@@ -42,12 +42,11 @@
             <span class="spacing"><a href="profile.html" th:href="@{/profile}">Profile</a></span>
             <span class="spacing"><a href="contact.html" th:href="@{/contact}">Contact</a></span>
             <span class="spacing" th:if="${session.currentUser != null}"><a href="index.html" th:href="@{/logout}">Logout</a></span>
-        <span><h1>You're logged in as <span id="current-user" th:text="${session.currentUser.email}"></span></h1></span>
+            <span><h1>You're logged in as <span id="current-user" th:text="${session.currentUser.email}"></span></h1></span>
         </div>
     </menu>
     <div id="basket">
         <a href="cart.html" th:href="@{/cart}"><i class='bx bx-basket' style='color:#D99099' ></i></a>
-        <span style='color: #fff0ed'>0</span>
     </div>
 </div>
 
