@@ -248,7 +248,7 @@ header, img {
     display: flex;
     position: fixed;
     flex-wrap: wrap;
-    top: 65%;
+    top: 63%;
     left: 40%;
     transform: translate(-50%, -50%);
     border-radius: 10px;

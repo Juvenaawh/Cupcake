@@ -49,7 +49,7 @@
         <select class="order-style" id="topping" name="topping">
             <option value="1">Chocolate - 5.00 kr</option>
             <option value="2">Blueberry - 5.00 kr</option>
-            <option value="3">Rasberry - 5.00 kr</option>
+            <option value="3">Raspberry - 5.00 kr</option>
             <option value="4">Crispy - 6.00 kr</option>
             <option value="5">Strawberry - 6.00 kr</option>
             <option value="6/Raisin">Rum/Raisin - 7.00 kr</option>
@@ -67,7 +67,7 @@
             <option value="5">12</option>
         </select>
 
-        <p>Total price: <span id="price">10.00 kr</span></p>
+        <p><span></span></p>
         <button id="btn-order" type="submit" formaction="additem">Add To Basket</button>
     </form>
 </div>
@@ -95,26 +95,5 @@
     </div>
 </div>
 
-<script>
-    const bottomPrices = { 'Chocolate': 5.00, 'Vanilla': 5.00, 'Nutmeg': 5.00, 'Pistacio': 6.00, 'Almond': 7.00 };
-    const toppingPrices = { 'Chocolate': 5.00, 'Blueberry': 5.00, 'Rasberry': 5.00, 'Crispy': 6.00, 'Strawberry': 6.00 };
-
-    const bottomSelect = document.getElementById('bottom');
-    const toppingSelect = document.getElementById('topping');
-    const priceDisplay = document.getElementById('price');
-
-    function updatePrice() {
-        const bottomPrice = bottomPrices[bottomSelect.value];
-        const toppingPrice = toppingPrices[toppingSelect.value];
-        const totalPrice = bottomPrice + toppingPrice;
-        priceDisplay.textContent = `${totalPrice.toFixed(2)} kr`;
-    }
-
-    bottomSelect.addEventListener('change', updatePrice);
-    toppingSelect.addEventListener('change', updatePrice);
-
-    // opdatering af prisen ved indlæsning af siden
-    document.addEventListener('DOMContentLoaded', updatePrice);
-</script>
 </body>
 </html>
