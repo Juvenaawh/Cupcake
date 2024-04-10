@@ -11,7 +11,7 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    //Der laves getters & setters her;
+    //Der laves getters
 
     public Bottom getBottom() {
         return bottom;

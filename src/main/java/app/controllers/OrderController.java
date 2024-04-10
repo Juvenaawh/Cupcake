@@ -4,15 +4,12 @@ import app.entities.Bottom;
 import app.entities.Cart;
 import app.entities.Topping;
 import app.entities.User;
-import app.exceptions.DatabaseException;
-import app.persistence.CartMapper;
 import app.persistence.ConnectionPool;
 import app.persistence.CupcakeMapper;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class OrderController {
 
