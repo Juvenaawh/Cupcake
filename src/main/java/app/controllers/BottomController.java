@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BottomController {
 
-    private DataSource dataSource;
+    /*private DataSource dataSource;
 
     public BottomController(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -33,5 +33,5 @@ public class BottomController {
             throw new DatabaseException("Fejl!!!!", e.getMessage());
         }
         return bottoms;
-    }
+    }*/
 }

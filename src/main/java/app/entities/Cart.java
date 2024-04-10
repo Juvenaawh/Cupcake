@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
+
     private List<CartItem> cartItems = new ArrayList<CartItem>();
 
     public void addItem(Topping topping, Bottom bottom, int quantity) {
@@ -28,6 +29,4 @@ public class Cart {
         }
         return sum;
     }
-
-
 }
