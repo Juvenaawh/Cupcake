@@ -1,0 +1,58 @@
+@startuml
+!pragma layout smetana
+
+class Main {
+    - String USER
+    - String PASSWORD
+    - String URL
+    - String DB
+
+}
+
+
+package "config" {
+class ThymeleafConfig
+}
+
+package "entites" {
+class Bottom
+class Cart {
+- List<CartItem> cartItems
+}
+class CartItem
+class Topping
+class User {
+- int userID
+- String role
+}
+}
+
+package "controllers" {
+class OrderController
+class UserController
+}
+
+package "persistence" {
+class ConnectionPool
+class CupcakeMapper
+class UserMapper
+}
+
+package "exceptions" {
+class DatabaseException
+}
+
+Main -- OrderController
+Main -- UserController
+Main -- ThymeleafConfig
+UserController -- User
+OrderController -- CupcakeMapper
+CupcakeMapper -- Bottom
+CupcakeMapper -- Topping
+UserMapper -- ConnectionPool
+CupcakeMapper -- ConnectionPool
+CupcakeMapper -- DatabaseException
+UserMapper -- DatabaseException
+entites -- persistence
+
+@enduml

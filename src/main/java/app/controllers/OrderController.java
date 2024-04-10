@@ -49,26 +49,6 @@ public class OrderController {
         }
     }
 
-    /*public static void checkout(Context ctx, ConnectionPool connectionPool) {
-        User user = ctx.sessionAttribute("currentUser");
-
-        try {
-            if (user == null) {
-                ctx.attribute("error", "Du skal være logget ind for at gennemføre købet.");
-                ctx.redirect("/login");
-                return;
-            }
-            int orderId = CartMapper.createOrder(user.getUserId(), connectionPool);
-            CartMapper.saveOrderItems(orderId, user.getUserId(), connectionPool);
-            CartMapper.clearCart(user.getUserId(), connectionPool);
-            ctx.sessionAttribute("cart", null);
-            ctx.redirect("/order_success");
-        } catch (DatabaseException e) {
-            ctx.attribute("error", "Der opstod en fejl under oprettelsen af din bestilling: " + e.getMessage());
-            ctx.redirect("/checkout_error");
-        }
-    }*/
-
     private static void completePayment(Context ctx) {
         String cardName = ctx.formParam("cardname");
         String cardNumber = ctx.formParam("cardnumber");
