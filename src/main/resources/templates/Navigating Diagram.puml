@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+scale 350 width
+[*] --> LoggedOut
+
+state LoggedOut {
+  [*] --> LoginPage
+  LoginPage --> HomePage : Login
+}
+
+state HomePage {
+  [*] --> ViewCupcakes
+  ViewCupcakes --> CartPage : AddToCart
+  CartPage --> ViewCupcakes : Return
+  ViewCupcakes --> LoginPage : Logout
+}
+
+state CartPage {
+  [*] --> ViewCart
+  ViewCart --> CartPage : EditCart
+  ViewCart --> CheckoutPage : ProceedToCheckout
+  CheckoutPage --> ViewCart : Return
+}
+
+state CheckoutPage {
+  [*] --> EnterPaymentInfo
+  EnterPaymentInfo --> ReviewOrder : ConfirmPaymentInfo
+  ReviewOrder --> OrderConfirmation : PlaceOrder
+  OrderConfirmation --> HomePage : ReturnHome
+}
+@enduml
