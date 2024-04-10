@@ -81,7 +81,7 @@ header, img {
     text-shadow: 1px 1px 0px saddlebrown;
 }
 
-#basket span {
+/*#basket span {
     display: flex;
     width: 15px;
     height: 15px;
@@ -94,9 +94,9 @@ header, img {
     position: absolute;
     top: 40%;
     right: 0px;
-}
+}*/
 
-/***************** Front page *******************/
+/***************** Front-page *******************/
 
 .flex-login {
     display: flex;
@@ -335,13 +335,13 @@ header, img {
     color: #D99099;
 }
 
-/*********** Cart ************/
+/*********** Cart-page ************/
 
 .cart-container {
-    width: 400px;
+    width: 550px;
     background-color: transparent;
     position: fixed;
-    inset: 37% auto 40px 0;
+    inset: 36% auto 40px 0;
     margin-left: 50px;
     display: grid;
     grid-template-rows: 70px 1fr 70px;
@@ -351,32 +351,38 @@ header, img {
     color: #D99099;
     text-shadow: 1px 1px 0px saddlebrown;
     padding: 20px;
-    margin: 0;
+    margin-top: 0px;
     font-weight: 300;
+}
+
+.cart-container .cart-btn button{
+    display: grid;
+    padding: 10px;
+    margin-left: 20px;
+    height: 40px;
+    width: 170px;
+    background-color: #fff0ed;
+    border: none;
+    font-weight: 500;
+    color: #D99099;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-container button a {
+    color: #D99099;
+    text-decoration: none;
+    text-align: center;
 }
 
 .cart-container .cart-btn {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-    margin: 20px;
+    gap: 130px;
 }
 
-.cart-container .cart-btn button{
-    background-color: #fff0ed;
-    border: none;
-    font-weight: 500;
-    color: #D99099;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.cart-container .cart-btn a {
-    color: #D99099;
-    text-decoration: none;
-}
-
-.cart-container .list-cart .item {
+/*.cart-container .list-cart .item {
     padding: 10px 0 0 10px;
     display: grid;
     grid-template-columns: 70px 150px 70px 1fr;
@@ -400,14 +406,24 @@ header, img {
 .list-cart .qauntity tr:nth-child(2){
     background-color: transparent;
     color: #fff0ed;
+}*/
+
+.cart-container table {
+    margin: 20px;
 }
 
 .list-cart tr {
-    border: 1px solid silver;
+    border: 0.5px solid saddlebrown;
+    color: #fff0ed;
+}
+
+.list-cart th {
+    padding: 10px;
 }
 
 .list-cart td {
     text-align: center;
+    padding: 30px;
 }
 
 .list-cart {
@@ -422,7 +438,7 @@ header, img {
     overflow: auto;
 }
 
-/************ Register *********/
+/************ Register-page *********/
 
 .create-account {
     width: 600px;
@@ -482,13 +498,13 @@ header, img {
     font-weight: bold;
 }
 
-/************ Check out ***********/
+/************ Checkout-page ***********/
 
 .check-out {
     width: 600px;
     background-color: transparent;
     position: fixed;
-    inset: 35% auto 40px 20px;
+    inset: 37% auto 40px 60px;
     display: grid;
     grid-template-rows: 70px 1fr 70px;
 }
@@ -509,7 +525,7 @@ header, img {
     font-size: 22px;
 }
 
-label #fname{
+.checkout-form #fname{
     display: block;
     padding: 10px;
     color: #fff0ed;
