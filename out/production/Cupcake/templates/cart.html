@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+<header>
+    <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
+</header>
+
+<div class="header-box">
+    <p1>OLSKER</p1>
+    <p>CUPCAKES</p>
+</div>
+
+<div class="menu-bar">
+    <menu>
+        <div class="menu-style">
+            <span><a href="order.html" th:href="@{/order}">Home</a></span>
+            <span class="spacing"><a href="profile.html" th:href="@{/profile}">Profile</a></span>
+            <span class="spacing"><a href="contact.html" th:href="@{/contact}">Contact</a></span>
+            <span class="spacing" th:if="${session.currentUser != null}">
+                <span th:text="${session.currentUser.username}">
+                     <a href="index.html" th:href="@{/logout}">Logout</a>
+                </span>
+             <span>
+                 <h1>You're logged in as
+                     <span id="current-user" th:text="${session.currentUser.email}"></span></h1>
+             </span>
+        </div>
+    </menu>
+    <div id="basket">
+        <a href="cart.html" th:href="@{/cart}"><i class='bx bx-basket' style='color:#D99099'></i></a>
+        <span style='color: #fff0ed'>0</span>
+    </div>
+</div>
+
+<div class="cart-container">
+    <h1>Shopping Basket</h1>
+    <table class="list-cart">
+        <thead>
+        <tr>
+            <th>Quantiy</th>
+            <th>Topping</th>
+            <th>Bottom</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item: ${session.cart.cartItems}">
+            <td th:text="${item.quantity}">Quantiy</td>
+            <td th:text="${item.topping.name}">Topping</td>
+            <td th:text="${item.bottom.name}">Bottom</td>
+            <td th:text="${item.getPrice()}">Price</td>
+        </tr>
+        <tr>
+            <td>Total price</td>
+            <td></td>
+            <td></td>
+            <td th:text="${session.cart.getTotalPrice() + ' DKK'}">150 kr</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="order.html" th:href="@{/shop}">Keep shopping</a>
+
+</div>
+<div class="cart-btn">
+    <button class="close"><a href="order.html" th:href="@{/order}">CLOSE</a></button>
+    <button class="check-out-btn"><a href="checkout.html" th:href="@{/checkout}">CHECK OUT</a></button>
+</div>
+</div>
+
+</body>
+</html>

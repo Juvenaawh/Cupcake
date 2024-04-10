@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+<header>
+        <img alt="logo" src="../public/images/logo.png" th:src="@{/images/logo.png}">
+</header>
+
+<div class="header-box">
+    <p1>OLSKER</p1>
+    <p>CUPCAKES</p>
+</div>
+
+<div class="menu-bar">
+    <menu>
+        <div class="menu-style">
+            <span><a href="index.html" th:href="@{/order}">Home</a></span>
+            <span class="spacing"><a href="contact.html" th:href="@{/contact}">Contact</a></span>
+        </div>
+    </menu>
+</div>
+
+<div class="create-account">
+    <h1>Create account</h1>
+    <form id="register-form"  method="post">
+        <div>
+        <input type="text" name="firstname" placeholder="Enter firstname"/>
+        <input type="text" name="lastname" placeholder="Enter lastname"/>
+        </div>
+        <div>
+            <input type="text" name="username" placeholder="Enter username" required>
+            <input type="email" name="email" placeholder="Enter email adress" required>
+        </div>
+        <div>
+            <input class="register-password" type="password" name="password1" placeholder="Enter your password" required>
+            <input class="register-password" type="password" name="password2" placeholder="Enter your password again"/>
+        </div>
+
+        <button type="submit" formaction="/register">Create account</button>
+    </form>
+</div>
+</body>
+</html>
